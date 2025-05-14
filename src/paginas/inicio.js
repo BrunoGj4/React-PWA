@@ -1,8 +1,10 @@
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { 
+  Stack,
+  Typography,
+  Button,
+} from '@mui/material';
 import { Link } from 'react-router-dom';
-
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function PaginaInicio() {
   return (
@@ -20,7 +22,11 @@ export default function PaginaInicio() {
       </Typography>
       <img className="efeito-flutuando" src="../img/astrounata.png" alt="Astrounauta Flutuando." />
       <Link to="/planetas">
-        <Button variant="contained">Vamos lá</Button>
+        <Button variant="contained">
+          Vamos lá
+          <ArrowForwardIosIcon></ArrowForwardIosIcon>
+
+        </Button>
       </Link>
 
 
