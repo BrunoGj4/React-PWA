@@ -4,6 +4,7 @@ import tema from "./Tema";
 import PaginaInicio from "./paginas/inicio";
 import PaginaPlanetas from "./paginas/planetas";
 import PaginaPlaneta from "./paginas/planeta";
+import "./App.css"; // Importing CSS file
 
 export default function App() {
   return (

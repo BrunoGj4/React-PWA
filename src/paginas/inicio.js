@@ -11,16 +11,17 @@ export default function PaginaInicio() {
   <>    
     <Stack
       direction="column"
+      height="100vh"
       spacing={2}
       sx={{
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Typography variant="h3" component="h2">
+      <Typography variant="h3" component="h1" textAlign="center">
         Conheça os planetas do sistema solar!
       </Typography>
-      <img className="efeito-flutuando" src="../img/astrounata.png" alt="Astrounauta Flutuando." />
+      <img className="animacaoEfeitoFlutuando" src="../img/astrounata.png" alt="Astrounauta Flutuando." />
       <Link to="/planetas">
         <Button variant="contained">
           Vamos lá
