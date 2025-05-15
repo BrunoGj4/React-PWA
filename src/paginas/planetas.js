@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 export default function PaginaPlanetas() {
   return (
     <>
-      <Container maxWidth="xl" mt={2} mb={2}>
+      <Container maxWidth="xl" className="containerMargin">
         <Typography 
           variant="h4" 
           component="h2"

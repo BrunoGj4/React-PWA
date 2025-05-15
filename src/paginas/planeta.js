@@ -18,10 +18,10 @@ export default function PaginaPlaneta() {
 
   return (
     <>
-      <Link to="/">
-        <Button variant="contained" ><ArrowBackIosIcon/>Voltar</Button>
-      </Link>
-      <Container maxWidth="xl">    
+      <Container maxWidth="xl" className="containerMargin">    
+        <Link to="/">
+          <Button variant="contained" ><ArrowBackIosIcon/>Voltar</Button>
+        </Link>
         <Stack
           direction="column"
           spacing={2}
@@ -29,7 +29,7 @@ export default function PaginaPlaneta() {
             justifyContent: "center",
             alignItems: "center",
           }}>  
-          <img className="efeito-girar" src=""  alt=""/>
+          <img className="animacaoEfeitoGirar" src=""  alt=""/>
           <Typography variant="h5" component="h1" textAlign="center">
             Terra
           </Typography>

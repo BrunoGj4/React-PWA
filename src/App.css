@@ -25,11 +25,29 @@ a {
   background-size: cover;
 }
 
+.containerMargin{
+  margin-top: 2rem;
+}
+
+
 @keyframes animacaoEfeitoFlutuando {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-      transform: translateY(-30px);
-    }
+    transform: translateY(-30px);
+  }
+}
+
+.animacaoEfeitoGirar{
+  animation: animacaoEfeitoGirar 30s linear infinite;
+}
+
+@keyframes animacaoEfeitoGirar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
