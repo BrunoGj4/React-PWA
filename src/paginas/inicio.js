@@ -16,10 +16,12 @@ export default function PaginaInicio() {
       sx={{
         justifyContent: "center",
         alignItems: "center",
+        marginTop: 6,
       }}
     >
       <Typography variant="h3" component="h1" textAlign="center">
         Conheça os planetas do sistema solar!
+        Erica é muito chata!!!!
       </Typography>
       <img className="animacaoEfeitoFlutuando" src="../img/astrounata.png" alt="Astrounauta Flutuando." />
       <Link to="/planetas">
@@ -29,8 +31,6 @@ export default function PaginaInicio() {
 
         </Button>
       </Link>
-
-
     </Stack>
   </>
  );

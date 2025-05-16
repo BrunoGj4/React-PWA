@@ -5,7 +5,11 @@ const tema = createTheme({
     primary: {
       main: '#E0A51A',
       contrastText: '#fff',
-    }
+    },
+    white: {
+      main: '#fff',
+      contrastText: '#000',
+    },
   },
   typography: {
     allVariants: {

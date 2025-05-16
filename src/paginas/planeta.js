@@ -19,7 +19,8 @@ export default function PaginaPlaneta() {
   return (
     <>
       <Container maxWidth="xl" className="containerMargin">    
-        <Link to="/">
+        <Link to="/planetas">
+          {/* <Button variant="contained" color="primary" startIcon={<ArrowBackIosIcon/>}>Voltar</Button> */}
           <Button variant="contained" ><ArrowBackIosIcon/>Voltar</Button>
         </Link>
         <Stack
