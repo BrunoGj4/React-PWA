@@ -18,13 +18,11 @@ export default function PaginaPlaneta() {
     (async () => {
       try {
         let respostaApi = await ApiPlanetas.obterUnicoPorSlug(parametros.slug);
-        if(!respostaApi[0]){throw new Error("Planeta não encontrado!")}
-        
+        if (!respostaApi[0]) {
+          throw new Error("Planeta não encontrado!");
+        }
+
         setPlaneta(respostaApi?.[0]);
-        setMsg({
-          subtitulo: "Planeta encontrado com sucesso!",
-          descricao: "Explore o planeta e descubra suas peculiaridades!",
-        });
         setCarregando(false);
       } catch (error) {
         setErro({
@@ -41,11 +39,12 @@ export default function PaginaPlaneta() {
 
   async function ClickCompartilhar() {
     // let resImg = await fetch(planeta?.imgUrl);
-    let resImg = await fetch(planeta?.imgUrl)
+    let resImg = await fetch(planeta?.imgUrl);
     let contentType = resImg.headers.get("content-type");
     let blob = await resImg.blob();
-    let binaryFile = new File([blob], `${planeta?.nome}-${planeta?.img}`, {type: contentType});
-
+    let binaryFile = new File([blob], `${planeta?.nome}-${planeta?.img}`, {
+      type: contentType,
+    });
 
     window.navigator.share({
       url: `${window.location.href}`,
@@ -63,27 +62,39 @@ export default function PaginaPlaneta() {
           <Button variant="contained" startIcon={<ArrowBackIosIcon />}>
             Voltar
           </Button>
-        </Link>        
-          <Typography className="imgTexto" variant="h5" component="h1" textAlign="center" fontSize="4rem" mt={2} mb={2}>
-            <img className="animacaoEfeitoGirar" src={planeta?.imgUrl} alt={planeta?.descricao} width="10%"/>
-            {planeta?.nome} 
-          </Typography>
-          <Typography variant="body1" component="p">
-            {planeta?.descrição} 
-          </Typography>          
+        </Link>
+        <img
+          className="animacaoEfeitoGirar"
+          src={planeta?.imgUrl}
+          alt={planeta?.descricao}
+          width="20%"
+        />
+        <Typography
+          className="imgTexto"
+          variant="h5"
+          component="h1"
+          textAlign="center"
+          fontSize="4rem"
+          mt={2}
+          mb={2}
+        >
+          {planeta?.nome}
+        </Typography>
+        <Typography variant="body1" component="p">
+          {planeta?.descrição}
+        </Typography>
 
-          <Button
-            className="btnCompartilharPlaneta"
-            variant="contained"
-            color="primary"
-            endIcon={<ShareIcon />}
-            onClick={() => {
-              ClickCompartilhar();
-            }
-          }
-          >
-            Compartilhar
-          </Button>
+        <Button
+          className="btnCompartilharPlaneta"
+          variant="contained"
+          color="primary"
+          endIcon={<ShareIcon />}
+          onClick={() => {
+            ClickCompartilhar();
+          }}
+        >
+          Compartilhar
+        </Button>
       </Container>
     </ComponenteLayoutPadrao>
   );

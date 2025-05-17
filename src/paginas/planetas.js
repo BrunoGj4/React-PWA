@@ -21,11 +21,7 @@ export default function PaginaPlanetas() {
       try {
         let respostaApi = await ApiPlanetas.obterTodos();
         setPlanetas(respostaApi);
-        setMsg({
-          subtitulo: "Planeta encontrado com sucesso!",
-          descricao: "Explore o planeta e descubra suas peculiaridades!",
-        });
-        setCarregando(false);
+        setCarregando(false);        
       } catch (error) {
         setErro({
             subtitulo: "Erro ao carregar os planetas",
