@@ -1,151 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="">
-<link type="text/css" id="dark-mode" rel="stylesheet" href="">
-<style type="text/css" id="dark-mode-сustom-style"></style>
-<style type="text/css" id="dark-mode-theme-changer-style"></style>
+<html lang="pt-br" data-lt-installed="true">
 
 <head>
-  <meta charset="utf-8">
-  <link rel="icon" href="/img/iconSolarExplore.ico">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#000000">
-  <meta name="description"
-    content="Explore o sistema solar com o Solar Explorer, um aplicativo interativo que traz informações detalhadas sobre planetas, luas e outros corpos celestes. Aprenda sobre a formação do sistema solar, as características de cada planeta e muito mais!">
-  <link rel="apple-touch-icon" href="/img/iconSolarExplore.png">
-  <link rel="manifest" href="/manifest.json">
-  <title>Solar Explorer</title>
-  <link href="/static/css/main.1c936582.css" rel="stylesheet">
-  <style>
-    body {
-      background-image: linear-gradient(to bottom right, #7220a0, #e6b7f3);
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      min-height: 100vh
-    }
+    <meta charset="utf-8">
+    <link rel="icon" href="/img/iconSolarExplorer.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#7A37A6">
+    <meta name="description"
+        content="Explore os planetas do nosso sistema solar de forma divertida com o nosso aplicativo web.">
+    <link rel="apple-touch-icon" href="/img/iconSolarExplorer.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Solar Explorer</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom right, #722da0, #e6b7f3);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            min-height: 100vh
+        }
 
-    img {
-      max-width: 100%
-    }
+        img {
+            max-width: 100%
+        }
 
-    a {
-      text-decoration: none
-    }
+        a {
+            text-decoration: none
+        }
 
-    .animacaoEfeitoFlutuando {
-      animation: animacaoEfeitoFlutuando 5s ease-in-out infinite
-    }
+        .containerMargin {
+            padding-bottom: 2rem;
+            padding-top: 2rem
+        }
 
-    .cardVidro {
-      background-color: initial !important;
-      background-image: linear-gradient(-30deg, #ffffff4d, gba(255, 255, 255, .6), 60%);
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 12rem;
-      padding: 1rem;
-      width: 9rem
-    }
+        .cardVidro {
+            background-color: initial !important;
+            background-image: linear-gradient(-30deg, hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, .06) 60%);
+            background-repeat: no-repeat;
+            background-size: cover
+        }
 
-    .containerMargin {
-      display: inline-flex;
-      flex-wrap: wrap;
-      height: 100vh;
-      padding-top: 3rem
-    }
+        .text-white{
+            color: #fff;
+        }
 
-    .containerMargin,
-    .containerMargin>.container {
-      align-items: center;
-      gap: 2rem;
-      justify-content: center
-    }
+        .animacaoEfeitoFlutuando {
+            -webkit-animation: animacaoEfeitoFlutuando 5s ease-in-out infinite;
+            animation: animacaoEfeitoFlutuando 5s ease-in-out infinite
+        }
+        
 
-    .containerMargin>.container {
-      display: flex;
-      padding: 1rem
-    }
+        @-webkit-keyframes animacaoEfeitoFlutuando {
 
-    @keyframes animacaoEfeitoFlutuando {
+            0%,
+            to {
+                -webkit-transform: translateY(0);
+                transform: translateY(0)
+            }
 
-      0%,
-      to {
-        transform: translateY(0)
-      }
+            50% {
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px)
+            }
+        }
 
-      50% {
-        transform: translateY(-30px)
-      }
-    }
+        @keyframes animacaoEfeitoFlutuando {
 
-    .animacaoEfeitoGirar {
-      animation: animacaoEfeitoGirar 30s linear infinite
-    }
+            0%,
+            to {
+                -webkit-transform: translateY(0);
+                transform: translateY(0)
+            }
 
-    @keyframes animacaoEfeitoGirar {
-      0% {
-        transform: rotate(0deg)
-      }
+            50% {
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px)
+            }
+        }
 
-      to {
-        transform: rotate(1turn)
-      }
-    }
+        .animacaoEfeitoGirar {
+            -webkit-animation: animacaoEfeitoGirar 30s linear infinite;
+            animation: animacaoEfeitoGirar 30s linear infinite
+        }
 
-    .planetaContainer {
-      flex-direction: column;
-      padding-bottom: 3rem;
-      padding-top: 3rem;
-      row-gap: 4rem
-    }
+        @-webkit-keyframes animacaoEfeitoGirar {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
 
-    .planetaContainer,
-    .planetaContainer>Button {
-      align-items: center;
-      display: flex;
-      justify-content: center
-    }
+            to {
+                -webkit-transform: rotate(1turn);
+                transform: rotate(1turn)
+            }
+        }
 
-    .planetaContainer>Button {
-      background-color: #7220a0;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 1rem;
-      gap: .5rem;
-      padding: .5rem 1rem;
-      width: 12rem
-    }
+        @keyframes animacaoEfeitoGirar {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
 
-    .imgTexto {
-      align-items: center;
-      flex-direction: row;
-      gap: 1rem;
-      justify-content: space-around
-    }
-
-    .imgTexto>img {
-      left: 0;
-      width: 12rem
-    }
-    .text-while {
-      color: #fff;
-    }
-  </style>
-
+            to {
+                -webkit-transform: rotate(1turn);
+                transform: rotate(1turn)
+            }
+        }
+    </style>
 </head>
 
 <body cz-shortcut-listen="true"><noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root">
-    <div class="MuiStack-root css-1lkjzx9">
-      <center>
-        <h1 class="MuiTypography-root MuiTypography-h3 css-1cmth9l text-while">
-          Offline!
-        </h1>
-        <p class="text-while">Você está sem acesso a internet ou sua conexão está estável</p>
-      </center>
-    </div>
-  </div>
+    <div id="root">
+        <div class="css-yalksi">
+            <center>
+                <h1 class="MuiTypography-root MuiTypography-h3 css-18nzik text-white">Offline!</h1>
+                <p class="text-white">Você está sem acesso à internet ou sua conexão pode estar instável, infelizmente nosso aplicativo não funciona em modo offline.</p>
+            </center>
+        </div>
+    </div><scribe-shadow id="shadow-root-scribe-elem"
+        style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; z-index: 2147483647; overflow: visible;"></scribe-shadow>
 </body>
+
 
 </html>
