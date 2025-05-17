@@ -1,8 +1,0 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.netlify.planetas_api_react.twa",
-        "sha256_cert_fingerprints": ["87:2F:EB:E0:A7:AE:75:B4:CD:BE:41:E6:3D:76:2D:68:3D:8F:42:5C:78:B1:98:3E:8D:B1:A5:06:63:43:27:33"]
-      }
-    }]
