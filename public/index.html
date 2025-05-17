@@ -9,7 +9,7 @@
       name="description"
       content="Explore o sistema solar com o Solar Explorer, um aplicativo interativo que traz informações detalhadas sobre planetas, luas e outros corpos celestes. Aprenda sobre a formação do sistema solar, as características de cada planeta e muito mais!"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/img/iconSolarExplore.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/img/iconSolarExplorer.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,6 +25,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Solar Explorer</title>
+    <script>
+      if(typeof navigator !== 'underfined'){
+        navigator.serviceWorker
+          .register('/pwabuilder-sw.js')
+          .then(function(registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(function(error) {
+            console.error('Service Worker registration failed:', error);
+          });
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

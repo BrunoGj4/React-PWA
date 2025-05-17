@@ -23,7 +23,7 @@ export default function PaginaInicio() {
         Conheça os planetas do sistema solar!
         Erica é muito chata!!!!
       </Typography>
-      <img className="animacaoEfeitoFlutuando" src="../img/astrounata.png" alt="Astrounauta Flutuando." />
+      <img className="animacaoEfeitoFlutuando" src="../img/astronauta.png" alt="Astrounauta Flutuando." />
       <Link to="/planetas">
         <Button variant="contained" endIcon={<ArrowForwardIosIcon/>} color="primary">
           Vamos lá
