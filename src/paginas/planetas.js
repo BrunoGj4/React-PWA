@@ -21,15 +21,19 @@ export default function PaginaPlanetas() {
       try {
         let respostaApi = await ApiPlanetas.obterTodos();
         setPlanetas(respostaApi);
+        setMsg({
+          subtitulo: "Planeta encontrado com sucesso!",
+          descricao: "Explore o planeta e descubra suas peculiaridades!",
+        });
         setCarregando(false);
-        // Example usage of setErro and setMsg:
-        // setErro("Erro de exemplo");
-        // setMsg("Mensagem de exemplo");
       } catch (error) {
         setErro({
             subtitulo: "Erro ao carregar os planetas",
             descricao: String(error)
           });
+        setMsg({
+          subtitulo: "Planeta não encontrado!",
+        });
         setCarregando(false);
       }
     })();
@@ -42,7 +46,7 @@ export default function PaginaPlanetas() {
           Planetas do sistema solar
         </Typography>
 
-        <Grid container spacing={2} mt={2}>
+        <Grid className="container" container spacing={2} mt={2}>
           {/* XS = 2 item */}
           {/* SM = 3 item */}
           {/* MD = 4 item */}

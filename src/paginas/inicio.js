@@ -25,9 +25,8 @@ export default function PaginaInicio() {
       </Typography>
       <img className="animacaoEfeitoFlutuando" src="../img/astrounata.png" alt="Astrounauta Flutuando." />
       <Link to="/planetas">
-        <Button variant="contained">
+        <Button variant="contained" endIcon={<ArrowForwardIosIcon/>} color="primary">
           Vamos lá
-          <ArrowForwardIosIcon></ArrowForwardIosIcon>
 
         </Button>
       </Link>
