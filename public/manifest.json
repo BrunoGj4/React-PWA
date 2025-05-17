@@ -1,7 +1,21 @@
 {
   "short_name": "Solar Explore",
   "name": "Solar Explore",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#7a44b8",
+  "background_color": "#8746af",
   "screenshots": [
+    {
+      "src": "/img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
     {
       "src": "/img/prints/1.png",
       "sizes": "750x1334",
@@ -467,9 +481,5 @@
       "src": "/img/icons/ios/1024.png",
       "sizes": "1024x1024"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#7a44b8",
-  "background_color": "#8746af"
+  ]
 }
